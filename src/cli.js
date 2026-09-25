@@ -21,15 +21,14 @@ function parseArgs(argv) {
 function formatActivity(activity) {
   switch (activity.type) {
     case 'PushEvent': {
-      const count = activity.payload.length;
-      return `Pushed ${count} commit${count === 1 ? '' : 's'} to ${activity.repo.name}`;
+      return `Pushed changes to ${activity.repo.name}`;
     }
 
     case 'WatchEvent':
       return `Starred ${activity.repo.name}`;
 
     case 'CreateEvent':
-      return `Created ${activity.payload.ref_type}`;
+      return `Created ${activity.payload.ref_type} in ${activity.repo.name}`;
 
     case 'DeleteEvent':
       return `Deleted ${activity.payload.ref_type}`;
@@ -38,15 +37,7 @@ function formatActivity(activity) {
       return `Forked ${activity.repo.name}`;
 
     case 'IssuesEvent':
-      if (activity.payload.action === 'opened') {
-        return `Opened a new issue in ${activity.repo.name}`;
-      }
-
-      if (activity.payload.action === 'closed') {
-        return `Closed an issue in ${activity.repo.name}`;
-      }
-
-      return null;
+      return `${activity.payload.action[0].toUpperCase() + activity.payload.actions.slice(1)} a new issue in ${activity.repo.name}`;
 
     default:
       return null;
