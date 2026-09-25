@@ -52,7 +52,7 @@ function formatActivity(activity) {
       return null;
   }
 }
-//
+
 async function run(argv) {
   const {username} = parseArgs(argv);
 
