@@ -1,0 +1,22 @@
+{
+  "name": "github-user-activity",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Simple CLI to fetch recent activity of a GitHub user and display it in the terminal",
+  "bin": {
+    "github-activity": "./bin/github-activity.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chochimus/github-user-activity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chochimus/github-user-activity/issues"
+  },
+  "homepage": "https://github.com/chochimus/github-user-activity#readme"
+}
