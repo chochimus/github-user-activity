@@ -37,7 +37,7 @@ function formatActivity(activity) {
       return `Forked ${activity.repo.name}`;
 
     case 'IssuesEvent':
-      return `${activity.payload.action[0].toUpperCase() + activity.payload.actions.slice(1)} a new issue in ${activity.repo.name}`;
+      return `${activity.payload.action[0].toUpperCase() + activity.payload.actions.slice(1)} an issue in ${activity.repo.name}`;
 
     default:
       return null;
